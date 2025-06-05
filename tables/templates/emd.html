@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOINS</title>
+</head>
+<body>
+    <center>
+        <table border="1px">
+            <tr>
+                <th>ENO</th>
+                <th>ENAME</th>
+                <th>JOB</th>
+                <th>HIREDATE</th>
+                <th>SALARY</th>
+                <th>COMM</th>
+                <th>MGR</th>
+                <th>DEPTNO</th>
+                <!-- FOR MANAGER TABLE -->
+                <th>MGR ENO</th>
+                <th>MGR ENAME</th> 
+                <th>MGR JOB</th> 
+                <th>MGR HIREDATE</th> 
+                <th>MGR SALARY</th> 
+                <th>MGR COMM</th> 
+                <th>MGR MGR</th> 
+                <th>MGR DEPTNO</th>
+
+                <!-- for Dept no--> 
+                 <th>Deartment Deptno</th>
+                 <th>Deartment DNAME</th>
+                 <th>Deartment DLocation</th>
+                
+                
+            </tr>
+            {% for Eo in E%}
+            <tr>
+            
+                <td>{{Eo.eno}}</td>
+                <td>{{Eo.ename}}</td>
+                <td>{{Eo.job}}</td>
+                <td>{{Eo.hiredate}}</td>
+                <td>{{Eo.sal}}</td>
+                <td>{{Eo.comm}}</td>
+                <td>{{Eo.mgr}}</td>
+                <td>{{Eo.deptno}}</td>
+
+                <!-- FOR MANAGER TABLE -->
+                <td>{{Eo.mgr.eno}}</td>
+                <td>{{Eo.mgr.ename}}</td>
+                <td>{{Eo.mgr.job}}</td>
+                <td>{{Eo.mgr.hiredate}}</td>
+                <td>{{Eo.mgr.sal}}</td>
+                <td>{{Eo.mgr.comm}}</td>
+                <td>{{Eo.mgr.mgr}}</td>
+                <td>{{Eo.mgr.deptno}}</td>
+
+
+                <!-- FOR DEPARTMENT TABLE -->
+                <td>{{Eo.deptno.deptno}}</td>
+                <td>{{Eo.deptno.dname}}</td>
+                <td>{{Eo.deptno.loc}}</td>
+
+            </tr>
+            {% endfor%}
+
+        </table>
+    </center>
+    
+</body>
+</html>

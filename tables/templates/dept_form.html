@@ -1,0 +1,7 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="deptno" placeholder="Department Number" required>
+    <input type="text" name="dname" placeholder="Department Name" required>
+    <input type="text" name="loc" placeholder="Location" required>
+    <button type="submit">Submit</button>
+</form>

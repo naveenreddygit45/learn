@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOINS</title>
+</head>
+<body>
+    <center>
+        <table border="1px">
+            <tr>
+                <th>ENO</th>
+                <th>ENAME</th>
+                <th>JOB</th>
+                <th>HIREDATE</th>
+                <th>SALARY</th>
+                <th>COMM</th>
+                <th>MGR</th>
+                <th>DEPTNO</th>
+
+                <!-- for Dept no--> 
+                <th>DName</th>
+                <th>Deptno</th>
+                <th>DLocation</th> 
+                
+            </tr>
+            {% for Eo in E%}
+            <tr>
+            
+                <td>{{Eo.eno}}</td>
+                <td>{{Eo.ename}}</td>
+                <td>{{Eo.job}}</td>
+                <td>{{Eo.hiredate}}</td>
+                <td>{{Eo.sal}}</td>
+                <td>{{Eo.comm}}</td>
+                <td>{{Eo.mgr}}</td>
+                <td>{{Eo.deptno}}</td>
+
+                 <!-- for Dept no--> 
+                 <td>{{Eo.deptno.dname}}</td>
+                 <td>{{Eo.deptno.deptno}}</td>
+                <td>{{Eo.deptno.loc}}</td> 
+
+
+            </tr>
+            {% endfor%}
+
+        </table>
+    </center>
+    
+</body>
+</html>
