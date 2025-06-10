@@ -14,6 +14,7 @@ class Collection(models.Model):
     
     def __str__(self) -> str:
         return self.title
+    # ordering the data using Meta  class
     class Meta:
         ordering = ['title']
 
@@ -28,7 +29,7 @@ class Product(models.Model):
         validators=[MinValueValidator(1)])
     inventory = models.IntegerField(validators=[MinValueValidator(0)])
     last_update = models.DateTimeField(auto_now=True)
-    collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
+    collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
     promotions = models.ManyToManyField(Promotion, blank=True)
 
     def __str__(self) -> str:
@@ -61,6 +62,12 @@ class Customer(models.Model):
     
     class Meta:
         ordering = ['first_name', 'last_name']
+
+
+
+
+
+
 
 
 
